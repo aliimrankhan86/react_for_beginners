@@ -8,17 +8,31 @@ class Header extends Component {
     super()
     this.state = {
       list : [
-        {text: 'Home', id:1, link: '#'},
-        {text: 'About Us', id:2, link: '#'},
-        {text: 'News', id:3, link: '#'},
-        {text: 'Contact', id:4, link: '#'},
+        {text: 'Home', id:1, link: '#', active: 'no-active'},
+        {text: 'About Us', id:2, link: '#', active: 'no-active'},
+        {text: 'News', id:3, link: '#', active: 'no-active'},
+        {text: 'Contact', id:4, link: '#', active: 'no-active'},
       ]
     }
   }
+
+  findId = (id) => {
+    let newState = this.state.list;
+    newState.map((item, index) => {
+      console.log(item.id, index)
+      if(item.id === id) {newState[index].active = "active"}
+      else {newState[index].active = "no-active"}
+    })
+    this.setState({
+      list: newState
+    })
+  }
+
+
   render() {
     return (
         <header className="">
-          <Nav link={this.state.list} />
+          <Nav link={this.state.list} abc={(id)=>this.findId(id)} />
         </header>
     )
   }

@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './Header';
+import Searchbox from './Searchbox';
+import MainVideo from './Mainvideo';
+import Suggestions from './Suggestions';
 
 
 class App extends Component {
@@ -10,18 +13,17 @@ class App extends Component {
         <Header />
           <div className="container-fluid">
             <div className="row">
-              <div className="col-8 col-md-8"> Main Area </div>
-              <div className="col-4 col-md-4"> Suggestion </div>
+              <div className="col-md-8"> 
+                <Searchbox />
+                <MainVideo />
+              </div>
+              <div className="col-md-4">
+                <div className="suggestion-area">
+                  <Suggestions />
+                </div>
+              </div>
             </div>
           </div>
-
-             
-              
-             
-         
-
-
-
         </div>
     )
   }

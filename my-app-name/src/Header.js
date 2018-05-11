@@ -16,6 +16,8 @@ class Header extends Component {
     }
   }
 
+
+
   findId = (id) => {
     let newState = this.state.list;
     newState.map((item, index) => {
